@@ -24,92 +24,11 @@ The full documentation can be found at [GitBook](https://docs.astrotomic.info/la
 ## Installation
 
 ```bash
-composer require astrotomic/laravel-translatable
+composer require spamacom/laravel-translatable
 ```
 
 ## Quick Example
 
-### **Getting translated attributes**
+Model()->whereTranslationFullText('name','any word',['mode'=>'boolean'])->orWhereTranslationFullText('name','any word',['mode'=>'boolean'])
 
-```php
-$post = Post::first();
-echo $post->translate('en')->title; // My first post
-
-App::setLocale('en');
-echo $post->title; // My first post
-
-App::setLocale('de');
-echo $post->title; // Mein erster Post
-```
-
-### **Saving translated attributes**
-
-```php
-$post = Post::first();
-echo $post->translate('en')->title; // My first post
-
-$post->translate('en')->title = 'My cool post';
-$post->save();
-
-$post = Post::first();
-echo $post->translate('en')->title; // My cool post
-```
-
-### **Filling multiple translations**
-
-```php
-$data = [
-  'author' => 'Gummibeer',
-  'en' => ['title' => 'My first post'],
-  'fr' => ['title' => 'Mon premier post'],
-];
-$post = Post::create($data);
-
-echo $post->translate('fr')->title; // Mon premier post
-```
-
-## Tutorials
-
-- [How To Add Multilingual Support to Eloquent](https://laravel-news.com/how-to-add-multilingual-support-to-eloquent)
-- [How To Build An Efficient and SEO Friendly Multilingual Architecture For Your Laravel Application](https://mydnic.be/post/how-to-build-an-efficient-and-seo-friendly-multilingual-architecture-for-your-laravel-application)
-- [How to Add Multi-Language Models to Laravel QuickAdminPanel](https://quickadminpanel.com/blog/how-to-add-multi-language-models-to-laravel-quickadminpanel/)
-
-## Changelog
-
-Please see [CHANGELOG](docs/changelog.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/Astrotomic/.github/blob/master/CONTRIBUTING.md) for details. You could also be interested in [CODE OF CONDUCT](https://github.com/Astrotomic/.github/blob/master/CODE_OF_CONDUCT.md).
-
-### Security
-
-If you discover any security related issues, please check [SECURITY](https://github.com/Astrotomic/.github/blob/master/SECURITY.md) for steps to report it.
-
-## Credits
-
-- [Tom Witkowski](https://github.com/Gummibeer) _current maintainer_
-- [Dimitrios Savvopoulos](https://github.com/dimsav) _original author_
-- [David Llop](https://github.com/Lloople) _refactoring testsuite_
-- [Caneco](https://github.com/caneco) _artwork_
-- [All Contributors](../../contributors)
-
-## Versions
-
-| Package             | Laravel                       | PHP       |
-|:--------------------|:------------------------------| :-------- |
-| **v11.12 - v11.12** | `8.* / 9.* / 10.*`            | `^8.0`    |
-| **v11.10 - v11.11** | `8.* / 9.*`                   | `^8.0`    |
-| **v11.6 - v11.9**   | `5.8.* / 6.* / 7.* / 8.*`     | `>=7.2`   |
-| **v11.4 - v11.5**   | `5.6.* / 5.7.* / 5.8.* / 6.*` | `>=7.1.3` |
-| **v11.0 - v11.3**   | `5.6.* / 5.7.* / 5.8.*`       | `>=7.1.3` |
-
-## Treeware
-
-You're free to use this package, but if it makes it to your production environment I would highly appreciate you buying the world a tree.
-
-It’s now common knowledge that one of the best tools to tackle the climate crisis and keep our temperatures from rising above 1.5C is to [plant trees](https://www.bbc.co.uk/news/science-environment-48870920). If you contribute to my forest you’ll be creating employment for local families and restoring wildlife habitats.
-
-You can buy trees at [offset.earth/treeware](https://plant.treeware.earth/Astrotomic/laravel-translatable)
-
-Read more about Treeware at [treeware.earth](https://treeware.earth)
+Visit the totorial for more details how you can use fulltext search function [Boolean Full-Text Searches](https://dev.mysql.com/doc/refman/8.0/en/fulltext-boolean.html).

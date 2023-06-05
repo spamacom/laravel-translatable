@@ -1,6 +1,6 @@
 {
-    "name": "astrotomic/laravel-translatable",
-    "description": "A Laravel package for multilingual models",
+    "name": "spamacom/laravel-translatable",
+    "description": "A Laravel package for multilingual models | upgraded By Mouhammad Alali",
     "license": "MIT",
     "keywords": [
         "laravel",
